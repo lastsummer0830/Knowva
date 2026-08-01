@@ -1,18 +1,33 @@
 <p align="center">
-  <img src="docs/portfolio/images/01_hero.png" width="100%" alt="Knowva learning 도메인 — 행성형 커리큘럼 로드맵, 레벨 테스트 판정, 레슨 목록" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/portfolio/images/logo_dark.png" />
+    <img src="docs/portfolio/images/logo_light.png" width="300" alt="Knowva" />
+  </picture>
 </p>
 
-<h1 align="center">Knowva · learning 도메인</h1>
+<h1 align="center">learning 도메인</h1>
 
 <p align="center">
   <strong>단계 잠금 · 출석/스트릭 · 레벨 테스트 · 북마크 — 학습 진행 규칙을 서비스와 DB 계층에서 다룬 도메인</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Role-learning%20domain-20A5B2" alt="담당 도메인" />
-  <img src="https://img.shields.io/badge/Team-7%20members-6C8092" alt="팀 규모" />
-  <img src="https://img.shields.io/badge/Commits-55-4C8DAE" alt="커밋 수" />
-  <img src="https://img.shields.io/badge/Stack-Java%2017%20·%20Spring%20Boot-2F6F8F" alt="스택" />
+  <img src="https://img.shields.io/badge/%EB%8B%B4%EB%8B%B9-learning%20%EB%8F%84%EB%A9%94%EC%9D%B8-22B8C8?style=flat-square&labelColor=0A4F5B" alt="담당 learning 도메인" />
+  <img src="https://img.shields.io/badge/%ED%8C%80-7%EB%AA%85%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-22B8C8?style=flat-square&labelColor=0A4F5B" alt="팀 7명 프로젝트" />
+  <img src="https://img.shields.io/badge/%EA%B8%B0%EA%B0%84-2026.06~07-22B8C8?style=flat-square&labelColor=0A4F5B" alt="기간 2026.06~07" />
+  <img src="https://img.shields.io/badge/%EC%BB%A4%EB%B0%8B-55-22B8C8?style=flat-square&labelColor=0A4F5B" alt="커밋 55" />
+  <img src="https://img.shields.io/badge/%ED%8F%89%EA%B0%80-%ED%8C%80%201%EC%9C%84%20%28%EC%B5%9C%EC%9A%B0%EC%88%98%EC%83%81%29-E8871E?style=flat-square&labelColor=0A4F5B" alt="평가 팀 1위 (최우수상)" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Java%2017-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java 17" />
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/MyBatis-C74634?style=flat-square" alt="MyBatis" />
+  <img src="https://img.shields.io/badge/MySQL%208-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL 8" />
+  <img src="https://img.shields.io/badge/Thymeleaf-005F0F?style=flat-square&logo=thymeleaf&logoColor=white" alt="Thymeleaf" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/AWS%20EC2-232F3E?style=flat-square" alt="AWS EC2" />
+  <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions" />
 </p>
 
 <p align="center">
@@ -21,6 +36,13 @@
   <a href="#-트러블슈팅">트러블슈팅</a> ·
   <a href="#-실행-방법">실행 방법</a> ·
   <a href="#-팀-프로젝트-knowva">팀 프로젝트 전체</a>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/portfolio/images/01_hero_dark.png" />
+    <img src="docs/portfolio/images/01_hero.png" width="100%" alt="담당 화면 — 행성형 커리큘럼 로드맵, 레벨 테스트 판정" />
+  </picture>
 </p>
 
 > **7명이 함께 만든 팀 프로젝트입니다.** 이 README의 위쪽 절반은 제가 맡은 `learning` 도메인만 다루고,
