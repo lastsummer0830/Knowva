@@ -250,7 +250,7 @@
 .onb-summary-pill i.dot-primary { background: var(--primary); }
 .onb-summary-pill i.dot-success { background: var(--success); }
 
-/* 결과 안의 미니 로드맵 (planet node = 상태 tile, CLAUDE.md §4: 다크에선 glow 없이 단순화) */
+/* 결과 안의 미니 로드맵 (planet node = 상태 tile, 다크 테마에선 glow 없이 단순화) */
 .onb-mini-roadmap {
   width: 100%; padding: 20px 18px; border-radius: var(--radius);
   border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 94%, transparent); text-align: left;
