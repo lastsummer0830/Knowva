@@ -45,13 +45,13 @@
 실제로 잠긴 행성이 클릭 가능한 모습으로 그려졌다가 레슨 진입 시 403이 발생하는 문제를 겪음(트러블슈팅 3).
 이후 노드 상태를 컨트롤러에서 확정해 문자열로 넘기고, 템플릿은 받은 값을 그리기만 하는 구조로 정리.
 
-| | |
-| --- | --- |
-| **기간 · 인원** | 2026.06 ~ 07 · 7인 팀 (에이콘아카데미 KDT 최종 프로젝트) |
-| **담당** | `learning` 도메인 · 비주얼(로고 · 마스코트 누비 · 행성 심볼) |
-| **담당 범위 규모** | Java 69개 파일 · MyBatis 매퍼 XML 15개 · 도메인 커밋 32건 중 23건 |
-| **평가** | 외부 심사가 포함된 평가에서 팀 1위 (팀 성과) |
-| **저장소** | 포트폴리오용 fork. 원본 [hyunkyumlee/Acorn-E-Learning](https://github.com/hyunkyumlee/Acorn-E-Learning) |
+<table>
+<tr><td><b>기간 · 인원</b></td><td>2026.06 ~ 07 · 7인 팀 (에이콘아카데미 KDT 최종 프로젝트)</td></tr>
+<tr><td><b>담당</b></td><td><code>learning</code> 도메인 · 비주얼(로고 · 마스코트 누비 · 행성 심볼)</td></tr>
+<tr><td><b>담당 범위 규모</b></td><td>Java 69개 파일 · MyBatis 매퍼 XML 15개 · 도메인 커밋 32건 중 23건</td></tr>
+<tr><td><b>평가</b></td><td>외부 심사가 포함된 평가에서 팀 1위 (팀 성과)</td></tr>
+<tr><td><b>저장소</b></td><td>포트폴리오용 fork. 원본 <a href="https://github.com/hyunkyumlee/Acorn-E-Learning">hyunkyumlee/Acorn-E-Learning</a></td></tr>
+</table>
 
 <br/>
 
