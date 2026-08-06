@@ -7,7 +7,7 @@
 <br/>
 
 > 출발 방식 선택 한 번이 이후 모든 화면의 잠금을 결정. 레벨 테스트는 채점 → 등급 판정 → 해당 레벨까지 해금이 한 트랜잭션.<br/>
-> **7명 팀 프로젝트 중 `learning` 도메인 담당.** 아래는 그 범위이고, [팀 프로젝트 전체](#팀-프로젝트-knowva)는 문서 후반.
+> **7명 팀 프로젝트 중 `learning` 도메인 담당.** 아래는 그 범위이고, [팀 프로젝트 전체](#팀-프로젝트-전체)는 문서 후반.
 
 <br/>
 
@@ -239,69 +239,15 @@ learning/
 
 <br/>
 
-# 팀 프로젝트 Knowva
+## 팀 프로젝트 전체
 
-<p align="center">
-  <img src="ELearning/src/main/resources/static/assets/images/icons/header_logo_dark.png" width="200" alt="Knowva 로고" />
-</p>
+7명이 함께 만든 서비스 전체의 참고 자료. 담당 범위는 위쪽까지다.
 
-<p align="center">
-  <strong>학습의 흐름을 설계하고, AI 피드백으로 다음 행동을 제안하는 게이미피케이션 코딩 학습 플랫폼</strong>
-</p>
+**Knowva** — 학습 진도 · 코딩 테스트 · AI 분석 · 커뮤니티를 하나의 학습 루프로 연결한 게이미피케이션 코딩 학습 플랫폼. 에이콘아카데미 KDT 최종 프로젝트.
 
-<p align="center">
-  <a href="https://knowvaedu.com">서비스 바로가기</a>
-  ·
-  <a href="https://app.notion.com/p/E-Knowva-37b04ef58e2a803287a3e65d4ec452b9?source=copy_link">기획·산출물</a>
-</p>
+[서비스](https://knowvaedu.com) · [기획·산출물](https://app.notion.com/p/E-Knowva-37b04ef58e2a803287a3e65d4ec452b9?source=copy_link) · [원본 저장소](https://github.com/hyunkyumlee/Acorn-E-Learning) · [DB 문서](docs/sql)
 
 <br/>
-
-> 에이콘아카데미 KDT 최종 프로젝트. **문제를 푸는 순간**에서 끝나지 않고 학습 진도·코딩 테스트·AI 분석·커뮤니티를 하나의 학습 루프로 연결.
-
-<br/>
-
-## 왜 Knowva인가
-
-초보 학습자는 무엇을 공부할지, 지금 실력이 어느 정도인지, 다음에 무엇을 보완해야 하는지 판단하기 어려움.
-과목별 커리큘럼을 **행성 탐험형 로드맵**으로 풀어내고, 레슨 완료와 코딩 테스트 결과를 AI 분석 및 복습 행동으로 연결.
-
-| 학습의 단절 | Knowva의 해결 방식 |
-| --- | --- |
-| 학습 순서가 보이지 않음 | 행성·레슨·난이도로 구성된 시각적 로드맵과 잠금 해제 |
-| 제출하면 끝인 코딩 문제 | 실행 테스트, 채점, 오답 복습, 다음 단계 unlock |
-| 피드백이 추상적임 | 제출 이력 기반 AI 분석과 강점·보완점·추천 학습 제안 |
-| 혼자 학습하기 지루함 | 과목별 커뮤니티, 학습 기록, 반응, 콘텐츠 추천 |
-
-<br/>
-
-## 서비스 화면
-
-<p align="center">
-  <img src="ELearning/src/main/resources/static/assets/images/tutorial/1-learning-roadmap.png" width="31%" alt="행성형 학습 로드맵" />
-  <img src="ELearning/src/main/resources/static/assets/images/tutorial/2-learning-lessons.png" width="31%" alt="행성별 레슨 목록" />
-  <img src="ELearning/src/main/resources/static/assets/images/tutorial/3-codingtest.png" width="31%" alt="코딩 테스트 에디터" />
-</p>
-
-<p align="center">
-  <sub>학습 로드맵 · 레슨 목록 · 코드 에디터 및 실행 테스트</sub>
-</p>
-
-<br/>
-
-## 서비스 전체 기능
-
-| 영역 | 내용 |
-| --- | --- |
-| **학습 로드맵** | Java · Python · SQL · HTML/CSS/JS 커리큘럼을 Bronze · Silver · Gold 난이도와 행성 단위로 제공. 레슨 완료·레벨 테스트·난이도 unlock 정책으로 다음 행성과 레슨을 해금. 출석 도장·누적 점수·북마크·오답 복습·주간/월간 랭킹으로 지속성 지원 |
-| **AI 코딩 테스트** | 과목·난이도·현재 학습 범위를 반영해 AI가 문제를 생성. CodeMirror 6 에디터에서 작성한 코드를 실행 테스트의 표준 출력으로 확인하고, 실행 이력이 있어야 제출 가능. AI raw 응답에 정답 로직이 섞여도 학습자·분석 AI에는 공통 TODO starter code만 전달해 평가 공정성 유지 |
-| **AI 학습 분석** | 시험 결과와 풀이 이력을 근거로 강점·보완점·다음 학습 행동을 분석. 요청 토큰과 성공 보고서를 기준으로 중복 생성을 차단하고, 실패한 요청은 재시도 가능하게 관리 |
-| **커뮤니티 · 추천 콘텐츠** | 과목·게시판·정렬 필터 기반 커뮤니티와 Milkdown 기반 Markdown 에디터. 이미지 첨부·댓글·좋아요·스크랩·신고와 관리자 moderation 이력 제공. 오답노트를 Markdown 파일로 내려받거나 커뮤니티 게시글 초안으로 연결 |
-| **계정 · 결제 · 권한** | 이메일 로그인, Google·GitHub OAuth, Lambda·SES 기반 비밀번호 재설정 메일. 세션 기반 인증과 사용자·관리자 역할 분리, 공통 validation·예외 응답·idempotency 처리. Kakao Pay·Toss Payments 기반 프리미엄 결제 |
-
-<br/>
-
-## 팀 구성 · 7명
 
 도메인 패키지 기준으로 분담해 트랜잭션 충돌과 책임 공백을 축소.
 
@@ -318,7 +264,25 @@ learning/
 
 <br/>
 
-## 운영 아키텍처
+<details>
+<summary><b>서비스 전체 기능</b></summary>
+
+<br/>
+
+| 영역 | 내용 |
+| --- | --- |
+| **학습 로드맵** | Java · Python · SQL · HTML/CSS/JS 커리큘럼을 Bronze · Silver · Gold 난이도와 행성 단위로 제공. 출석 도장 · 누적 점수 · 북마크 · 오답 복습 · 주간/월간 랭킹 |
+| **AI 코딩 테스트** | 과목·난이도·학습 범위를 반영해 AI가 문제 생성. CodeMirror 6 에디터에서 실행 테스트 후 제출. 학습자에게는 공통 TODO starter code만 전달해 평가 공정성 확보 |
+| **AI 학습 분석** | 시험 결과와 풀이 이력 기반으로 강점·보완점·다음 학습 행동을 분석. 요청 토큰 기준으로 중복 생성 차단 |
+| **커뮤니티 · 추천 콘텐츠** | 과목·게시판·정렬 필터 커뮤니티. Milkdown 기반 Markdown 에디터, 댓글·좋아요·스크랩·신고와 관리자 moderation |
+| **계정 · 결제 · 권한** | 이메일 로그인, Google·GitHub OAuth, Lambda·SES 비밀번호 재설정. 세션 기반 인증과 역할 분리, Kakao Pay·Toss Payments 결제 |
+
+</details>
+
+<details>
+<summary><b>운영 아키텍처 · 배포 흐름</b></summary>
+
+<br/>
 
 ```mermaid
 flowchart LR
@@ -347,12 +311,8 @@ flowchart LR
 
 - Route 53 alias가 ALB로 요청을 전달하고, ACM 인증서가 연결된 ALB가 HTTPS를 종료.
 - ALB는 `/health` 상태 검사를 통과한 EC2의 Dockerized Spring Boot 앱으로만 요청을 전달. 앱과 MySQL은 같은 Docker network에서 통신.
-- 업로드 파일은 private S3에 저장하고 브라우저에 S3 URL을 직접 노출하지 않음. 앱의 same-origin endpoint가 권한을 확인한 뒤 streaming.
+- 업로드 파일은 private S3에 저장하고 S3 URL을 브라우저에 노출하지 않음. 앱의 same-origin endpoint가 권한 확인 후 streaming.
 - 비밀번호 재설정은 EC2 앱이 Lambda를 동기 호출하고, Lambda가 SES v2로 메일을 전송.
-
-<br/>
-
-## 배포 흐름
 
 ```mermaid
 flowchart LR
@@ -366,18 +326,16 @@ flowchart LR
     EC2 --> HEALTH["/health check<br/>최대 30회 재시도"]
 ```
 
-1. `main` push 또는 수동 실행이 production GitHub Environment의 workflow를 시작.
-2. Spring Boot test·`bootJar`와 Lambda test·build를 통과한 뒤 GitHub OIDC로 AWS IAM Role을 assume. long-lived AWS access key는 미저장.
-3. SAM이 Lambda와 private S3를 배포하고, Lambda에 invalid request smoke test를 수행.
-4. Git SHA 태그와 `latest` 태그의 `linux/amd64` Docker image를 ECR에 push.
-5. SSM이 EC2에서 새 image를 pull하고, S3 모드면 기존 로컬 업로드를 동기화한 뒤 컨테이너를 교체.
-6. `http://localhost:8080/health`가 최대 30회 안에 성공해야 deployment 완료.
+`main` push가 production Environment의 workflow를 시작. test·`bootJar` 통과 후 GitHub OIDC로 IAM Role을 assume해 long-lived access key를 저장하지 않음. SAM이 Lambda·private S3를 배포하고, Git SHA 태그 image를 ECR에 push한 뒤 SSM이 EC2 컨테이너를 교체. `/health`가 최대 30회 안에 성공해야 완료.
 
-운영은 `MAIL_TRANSPORT=lambda`, `KNOWVA_STORAGE_MODE=s3`로 Lambda·SES와 private S3를 사용. 전환·복구를 위해 코드 차원에서는 `smtp|lambda`, `local|mirror|s3` adapter도 유지.
+운영은 `MAIL_TRANSPORT=lambda`, `KNOWVA_STORAGE_MODE=s3`. 전환·복구를 위해 코드 차원에서는 `smtp|lambda`, `local|mirror|s3` adapter도 유지.
+
+</details>
+
+<details>
+<summary><b>기술 스택 · 프로젝트 구조</b></summary>
 
 <br/>
-
-## 기술 스택 (팀 전체)
 
 | 구분 | 사용 |
 | --- | --- |
@@ -388,10 +346,6 @@ flowchart LR
 | Infra | Docker, EC2, ALB, Route 53, ACM, ECR, Systems Manager, Lambda, SES v2, private S3, AWS SAM |
 | CI/CD | GitHub Actions, GitHub Environment, OIDC IAM Role |
 | Test | JUnit 5, Spring Boot Test, MyBatis Test, H2, Gradle |
-
-<br/>
-
-## 프로젝트 구조
 
 ```text
 .
@@ -408,26 +362,13 @@ flowchart LR
 │   │   ├── payment/      # 프리미엄 결제와 권한 부여
 │   │   ├── storage/      # local/mirror/S3 object storage adapter
 │   │   └── common/       # API 응답, 예외, AI client, idempotency
-│   ├── src/main/resources/
-│   │   ├── templates/    # Thymeleaf 화면
-│   │   ├── static/       # CSS, JavaScript, 서비스 이미지
-│   │   └── mappers/      # MyBatis XML 매퍼
-│   ├── src/main/frontend/ # CodeMirror·Milkdown 번들 소스
+│   ├── src/main/resources/  # Thymeleaf 화면 · static · MyBatis XML 매퍼
+│   ├── src/main/frontend/   # CodeMirror·Milkdown 번들 소스
 │   └── Dockerfile
-├── docs/
-│   ├── sql/              # DDL, demo setup, curriculum, community seed data
-│   ├── 개인 문서/         # 팀원별 개인 기술문서
-│   └── 최종 문서/         # WBS, 발표 자료 등 최종 산출물
-├── mail-lambda/           # Java 17 기반 SES v2 password-reset Lambda
+├── docs/sql/               # DDL, demo setup, curriculum, community seed data
+├── mail-lambda/            # Java 17 기반 SES v2 password-reset Lambda
 ├── infra/aws/template.yaml # Lambda, private S3, EC2 runtime IAM 정책 SAM template
 └── .github/workflows/deploy.yml
 ```
 
-<br/>
-
-## 링크
-
-- 서비스: [knowvaedu.com](https://knowvaedu.com)
-- 기획·산출물: [E Knowva Notion](https://app.notion.com/p/E-Knowva-37b04ef58e2a803287a3e65d4ec452b9?source=copy_link)
-- DB 문서: [docs/sql](docs/sql)
-- 원본 저장소: [hyunkyumlee/Acorn-E-Learning](https://github.com/hyunkyumlee/Acorn-E-Learning)
+</details>
