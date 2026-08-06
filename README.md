@@ -19,13 +19,15 @@
 
 ## 미리보기
 
-<img src="docs/portfolio/images/01_hero.png" width="100%" alt="행성형 커리큘럼 로드맵과 레벨 테스트 판정 화면" />
+<img src="docs/portfolio/images/01_hero.jpg" width="100%" alt="학습 메인 — Java BRONZE 진행률 13%, 커리큘럼 로드맵에 완료 행성과 학습 전 행성, 우측에 코딩테스트 Gate 행성 2/5 완료" />
 
 <br/>
 
-| <img src="docs/portfolio/images/03_locked_level.png" alt="아직 열리지 않은 레벨 — 행성과 게이트가 모두 잠김"> | <img src="docs/portfolio/images/04_lesson_detail.png" alt="이론 레슨 상세"> | <img src="docs/portfolio/images/05_bookmarks.png" alt="북마크한 이론 목록"> |
-|:--:|:--:|:--:|
-| 잠긴 레벨 — 행성·게이트 동시 잠금 | 이론 레슨 상세·완료 처리 | 북마크 토글 |
+| <img src="docs/portfolio/images/02_leveltest_result.png" width="100%" alt="레벨 스캔 완료 — 8문항 중 3문항 정답으로 실버 판정, 출발 지점 로드맵에 면제·시작·잠김 표시"> | <img src="docs/portfolio/images/03_locked_level.jpg" width="100%" alt="GOLD 레벨 로드맵 — 행성이 모두 회색으로 잠김 배지가 붙은 상태"> |
+|:--:|:--:|
+| **레벨 판정 → 해금** · 3/8 정답 = 실버, 1단계 면제 | **잠긴 레벨** · 서버가 확정한 `locked` 를 그대로 렌더 |
+| <img src="docs/portfolio/images/04_lesson_detail.png" width="100%" alt="이론 레슨 상세 — 이론 완료됨 배지, 예시 코드, 문제 풀이 하러 가기·북마크됨·다음 레슨 버튼"> | <img src="docs/portfolio/images/05_leveltest_question.png" width="100%" alt="레벨 스캔 진단 문항 1번 — Java 정수 기본형을 묻는 4지선다"> |
+| **이론 레슨** · 완료 처리 · 북마크 토글 | **진단 문항** · 사전 등록 8문항 (AI 미사용) |
 
 <br/>
 
@@ -128,18 +130,29 @@ flowchart LR
 git clone https://github.com/lastsummer0830/Knowva.git
 cd Knowva/ELearning
 
-# DDL과 시드 데이터 적재
+# 스키마 + 시드. 3개를 순서대로. (각 파일이 CREATE DATABASE / USE 를 직접 수행)
 mysql -u <user> -p < ../docs/sql/Knowva_DDL.sql
 mysql -u <user> -p < ../docs/sql/Knowva_Java_Curriculum_Data.sql
+mysql -u <user> -p < ../docs/sql/Knowva_demo_setup_data.sql
 
 ./gradlew bootRun
 ```
 
-- 설정값은 전부 환경변수 참조 (`application.properties`에 실값 없음). 최소 `DB_URL` · `DB_USERNAME` · `DB_PASSWORD` 필요.
-- OAuth·결제·메일·AI 키가 없으면 해당 기능만 비활성. `learning` 도메인 화면(`/learning`, `/learning/onboarding`, `/learning/level-test`)은 정상 동작.
-- 접속: `http://localhost:8080/learning`
+`application.properties`에 실값이 없어 **아래 10개는 없으면 기동 자체가 실패**한다(fail-fast).
 
-> ⚠️ 위 절차는 팀 개발 환경 기준으로 정리한 것으로, **이 fork에서 새로 재현 검증하지 않은 상태.**
+```bash
+DB_URL=jdbc:mysql://127.0.0.1:3306/elearning   DB_USERNAME=...   DB_PASSWORD=...
+REMEMBER_ME_SECRET=<임의 문자열>               APP_BASE_URL=http://localhost:8080
+AI_PROVIDER=openai  AI_ENABLED=false  AI_API_KEY=  AI_BASE_URL=https://api.openai.com/v1  AI_MODEL=gpt-4o-mini
+```
+
+- **AI·OAuth·결제·메일은 키 없이도 된다.** `AI_ENABLED=false` 로 두면 값만 채워져 있으면 되고, 나머지는 기본값이 있어 해당 기능만 비활성.
+- 접속 `http://localhost:8080` → `/signup` 으로 가입하면 온보딩부터 시작. `learning` 화면은 `/learning` · `/learning/onboarding` · `/learning/level-test`.
+- 시드에 데모 계정이 들어 있으나 **자격증명은 문서화하지 않는다**(시드 파일 정책).
+
+> **재현 검증** — 백지 스키마에 위 SQL 3개 적재(46 테이블 · 커리큘럼 노드 72 · 레슨 600 · 진단 문항 8) 후
+> `bootRun` 기동, `/learning` · `/learning/onboarding` · `/learning/level-test` · 레슨 상세 · 북마크 렌더까지 확인.
+> 미검증 = OAuth 로그인 · 결제 · AI 채점 (외부 키 필요).
 
 <br/>
 
