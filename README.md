@@ -19,20 +19,18 @@
 
 ## 미리보기
 
-<img src="docs/portfolio/images/01_hero.jpg" width="100%" alt="학습 메인 — BRONZE·SILVER·GOLD 세 단계가 모두 열린 Java 로드맵. 완료 행성과 응시 가능해진 코딩테스트 Gate" />
-
-<br/>
-
-아래 네 장이 **처음 들어와서 학습을 시작하기까지의 전 과정**이다.
-
 <table>
 <tr>
-<td width="50%"><img src="docs/portfolio/images/02_onboarding.jpg" alt="온보딩 과목 선택 — Java·Python·Web·SQL 네 과목 카드와 과목·목표·출발 3단계 진행 표시"><br><sub><b>① 과목 선택</b> — 여기서 고른 출발 방식 하나가 이후 모든 화면의 잠금을 결정한다</sub></td>
-<td width="50%"><img src="docs/portfolio/images/03_leveltest_question.jpg" alt="레벨 스캔 진단 문항 — Java 기본형·출력문을 묻는 4지선다 8문항"><br><sub><b>② 레벨 스캔</b> — 사전 등록 8문항. AI 채점이 아니라 정답 수로 판정한다</sub></td>
+<td width="50%" valign="top"><img src="docs/portfolio/images/01_roadmap.png" width="100%" alt="학습 로드맵 — BRONZE·SILVER·GOLD 세 단계가 모두 열린 Java 로드맵, 완료 행성과 응시 가능해진 코딩테스트 Gate"><br><b>학습 로드맵</b> — 세 단계가 모두 열린 상태</td>
+<td width="50%" valign="top"><img src="docs/portfolio/images/02_subject_select.png" width="100%" alt="온보딩 과목 선택 — Java·Python·Web·SQL 카드와 과목·목표·출발 3단계 진행 표시"><br><b>과목 선택</b> — 여기서 정한 출발 방식이 잠금을 결정</td>
 </tr>
 <tr>
-<td><img src="docs/portfolio/images/04_leveltest_result.jpg" alt="레벨 스캔 결과 — 8문항 중 6문항 정답으로 골드 레벨 3 판정, 출발 지점 로드맵 표시"><br><sub><b>③ 등급 판정 · 해금</b> — 6/8 정답이라 골드. 채점·등급·해금 이력이 한 트랜잭션으로 반영된다</sub></td>
-<td><img src="docs/portfolio/images/05_lesson_detail.jpg" alt="이론 레슨 상세 — 예시 코드와 이론 완료됨·북마크·다음 레슨 버튼"><br><sub><b>④ 이론 레슨</b> — 완료 처리와 북마크. 이 완료 수가 곧 행성 해금 기준이 된다</sub></td>
+<td valign="top"><img src="docs/portfolio/images/03_leveltest_question.png" width="100%" alt="레벨 스캔 진단 문항 — Java 기본형과 출력문을 묻는 4지선다"><br><b>레벨 스캔</b> — 사전 등록 8문항, AI 미사용</td>
+<td valign="top"><img src="docs/portfolio/images/04_leveltest_result.png" width="100%" alt="레벨 스캔 결과 — 8문항 중 6문항 정답으로 골드 레벨 3 판정"><br><b>등급 판정</b> — 6/8 정답이라 골드, 레벨 3부터</td>
+</tr>
+<tr>
+<td valign="top"><img src="docs/portfolio/images/05_lesson_list.png" width="100%" alt="행성 하나의 레슨 목록 — 완료 표시와 학습하기·문제 다시풀기 버튼"><br><b>레슨 목록</b> — 행성 하나에 이론 10개</td>
+<td valign="top"><img src="docs/portfolio/images/06_lesson_detail.png" width="100%" alt="이론 레슨 상세 — 예시 코드와 이론 완료됨·북마크·다음 레슨 버튼"><br><b>이론 레슨</b> — 완료 처리와 북마크 토글</td>
 </tr>
 </table>
 
