@@ -19,18 +19,20 @@
 
 ## 미리보기
 
-<img src="docs/portfolio/images/01_hero.jpg" width="100%" alt="학습 메인 — Java BRONZE 진행률 13%, 커리큘럼 로드맵에 완료 행성과 학습 전 행성, 우측에 코딩테스트 Gate 행성 2/5 완료" />
+<img src="docs/portfolio/images/01_hero.jpg" width="100%" alt="학습 메인 — BRONZE·SILVER·GOLD 세 단계가 모두 열린 Java 로드맵. 완료 행성과 응시 가능해진 코딩테스트 Gate" />
 
 <br/>
 
+아래 네 장이 **처음 들어와서 학습을 시작하기까지의 전 과정**이다.
+
 <table>
 <tr>
-<td width="50%"><img src="docs/portfolio/images/02_leveltest_result.png" alt="레벨 스캔 완료 — 8문항 중 3문항 정답으로 실버 판정, 출발 지점 로드맵에 면제·시작·잠김 표시"><br><sub><b>레벨 판정 → 해금</b> — 8문항 중 3정답이라 실버, 1단계를 면제하고 레벨 2부터 시작</sub></td>
-<td width="50%"><img src="docs/portfolio/images/03_locked_level.jpg" alt="GOLD 레벨 로드맵 — 행성이 모두 회색으로 잠김 배지가 붙은 상태"><br><sub><b>잠긴 레벨</b> — 컨트롤러가 확정한 locked 를 템플릿이 그리기만 함</sub></td>
+<td width="50%"><img src="docs/portfolio/images/02_onboarding.jpg" alt="온보딩 과목 선택 — Java·Python·Web·SQL 네 과목 카드와 과목·목표·출발 3단계 진행 표시"><br><sub><b>① 과목 선택</b> — 여기서 고른 출발 방식 하나가 이후 모든 화면의 잠금을 결정한다</sub></td>
+<td width="50%"><img src="docs/portfolio/images/03_leveltest_question.jpg" alt="레벨 스캔 진단 문항 — Java 기본형·출력문을 묻는 4지선다 8문항"><br><sub><b>② 레벨 스캔</b> — 사전 등록 8문항. AI 채점이 아니라 정답 수로 판정한다</sub></td>
 </tr>
 <tr>
-<td><img src="docs/portfolio/images/04_lesson_detail.png" alt="이론 레슨 상세 — 이론 완료됨 배지, 예시 코드, 문제 풀이 하러 가기·북마크됨·다음 레슨 버튼"><br><sub><b>이론 레슨</b> — 완료 처리 · 북마크 토글 · 다음 레슨</sub></td>
-<td><img src="docs/portfolio/images/05_leveltest_question.png" alt="레벨 스캔 진단 문항 1번 — Java 정수 기본형을 묻는 4지선다"><br><sub><b>진단 문항</b> — 사전 등록 8문항, AI 미사용</sub></td>
+<td><img src="docs/portfolio/images/04_leveltest_result.jpg" alt="레벨 스캔 결과 — 8문항 중 6문항 정답으로 골드 레벨 3 판정, 출발 지점 로드맵 표시"><br><sub><b>③ 등급 판정 · 해금</b> — 6/8 정답이라 골드. 채점·등급·해금 이력이 한 트랜잭션으로 반영된다</sub></td>
+<td><img src="docs/portfolio/images/05_lesson_detail.jpg" alt="이론 레슨 상세 — 예시 코드와 이론 완료됨·북마크·다음 레슨 버튼"><br><sub><b>④ 이론 레슨</b> — 완료 처리와 북마크. 이 완료 수가 곧 행성 해금 기준이 된다</sub></td>
 </tr>
 </table>
 
