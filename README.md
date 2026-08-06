@@ -4,10 +4,16 @@
 
 <h3 align="center">행성 로드맵을 따라 진도가 열리는 코딩 학습 플랫폼 — <code>learning</code> 도메인</h3>
 
+<p align="center">
+  <a href="https://youtu.be/8a7laRKY914">시연 영상</a>
+  ·
+  <a href="https://app.notion.com/p/E-Knowva-37b04ef58e2a803287a3e65d4ec452b9?source=copy_link">기획 · 산출물</a>
+</p>
+
 <br/>
 
 > 출발 방식 선택 한 번이 이후 모든 화면의 잠금을 결정. 레벨 테스트는 채점 → 등급 판정 → 해당 레벨까지 해금이 한 트랜잭션.<br/>
-> **7명 팀 프로젝트 중 `learning` 도메인 담당.** 아래는 그 범위이고, [팀 프로젝트 전체](#팀-프로젝트-전체)는 문서 후반.
+> **7명 팀 프로젝트 중 `learning` 도메인 담당.** 아래는 그 범위.
 
 <br/>
 
@@ -232,143 +238,3 @@ learning/
 - **테스트** — 멱등 동작은 매퍼 test double로 5개 케이스 검증(`ProgressServiceMarkPracticePassedTest`). 반면 로드맵 노드 상태 판정과 레벨 테스트 채점은 여전히 화면 확인에 의존. 상태 판정 쪽 회귀 테스트가 다음 과제.
 - **남아 있는 문제** — 진행률 계산이 행성마다 `COUNT` 두 번을 실행(`computeRoadmapProgress` 루프). 행성이 6개인 현재 규모에서는 무리가 없으나 전형적인 N+1이라, 과목당 한 번의 집계 쿼리로 통합하는 것이 과제.
 - **한계** — 레벨 테스트 문항은 사전 등록 pool 기반. 과목별 문항 수가 늘어나면 8문항 선택 전략을 재검토해야 하는 구조.
-
-<br/>
-
----
-
-<br/>
-
-## 팀 프로젝트 전체
-
-7명이 함께 만든 서비스 전체의 참고 자료. 담당 범위는 위쪽까지다.
-
-**Knowva** — 학습 진도 · 코딩 테스트 · AI 분석 · 커뮤니티를 하나의 학습 루프로 연결한 게이미피케이션 코딩 학습 플랫폼. 에이콘아카데미 KDT 최종 프로젝트.
-
-[서비스](https://knowvaedu.com) · [기획·산출물](https://app.notion.com/p/E-Knowva-37b04ef58e2a803287a3e65d4ec452b9?source=copy_link) · [원본 저장소](https://github.com/hyunkyumlee/Acorn-E-Learning) · [DB 문서](docs/sql)
-
-<br/>
-
-도메인 패키지 기준으로 분담해 트랜잭션 충돌과 책임 공백을 축소.
-
-| 담당 | 패키지 | 역할 |
-| --- | --- | --- |
-| 공통 <sub>(4번 담당자 겸임)</sub> | `common` · `config` · `security` | 공통 응답/예외/검증/idempotency |
-| 1번 | `auth` | 회원가입·로그인·세션·OAuth |
-| **2번 · 조아진** | **`learning`** | **학습·커리큘럼·이론·레벨테스트·출석** |
-| 3번 | `practice` · `ranking` | 문제풀이·오답·점수·랭킹 |
-| 4번 | `exam` · `analysis` | AI 시험 / AI 분석 |
-| 5번 | `community` · `content` | 커뮤니티·파일·신고·추천콘텐츠 |
-| 6번 | `payment` · `user` | 결제·Premium·마이페이지 |
-| 7번 | `admin` | 관리자·운영·통합 |
-
-<br/>
-
-<details>
-<summary><b>서비스 전체 기능</b></summary>
-
-<br/>
-
-| 영역 | 내용 |
-| --- | --- |
-| **학습 로드맵** | Java · Python · SQL · HTML/CSS/JS 커리큘럼을 Bronze · Silver · Gold 난이도와 행성 단위로 제공. 출석 도장 · 누적 점수 · 북마크 · 오답 복습 · 주간/월간 랭킹 |
-| **AI 코딩 테스트** | 과목·난이도·학습 범위를 반영해 AI가 문제 생성. CodeMirror 6 에디터에서 실행 테스트 후 제출. 학습자에게는 공통 TODO starter code만 전달해 평가 공정성 확보 |
-| **AI 학습 분석** | 시험 결과와 풀이 이력 기반으로 강점·보완점·다음 학습 행동을 분석. 요청 토큰 기준으로 중복 생성 차단 |
-| **커뮤니티 · 추천 콘텐츠** | 과목·게시판·정렬 필터 커뮤니티. Milkdown 기반 Markdown 에디터, 댓글·좋아요·스크랩·신고와 관리자 moderation |
-| **계정 · 결제 · 권한** | 이메일 로그인, Google·GitHub OAuth, Lambda·SES 비밀번호 재설정. 세션 기반 인증과 역할 분리, Kakao Pay·Toss Payments 결제 |
-
-</details>
-
-<details>
-<summary><b>운영 아키텍처 · 배포 흐름</b></summary>
-
-<br/>
-
-```mermaid
-flowchart LR
-    USER["사용자 · 관리자"] -->|"HTTPS"| DNS["Route 53<br/>DNS Alias"]
-
-    subgraph AWS["AWS · ap-northeast-2"]
-        DNS --> ALB["Application Load Balancer<br/>HTTPS :443"]
-        ACM["ACM Certificate"] -. "TLS 인증서 연결" .-> ALB
-        ALB -->|"HTTP :8080 · /health"| EC2["EC2"]
-
-        subgraph HOST["EC2 Docker network"]
-            APP["Spring Boot 4 · Thymeleaf<br/>knowva-server"]
-            DB[("MySQL 8<br/>knowva-mysql")]
-            APP <--> DB
-        end
-
-        EC2 --> APP
-        APP -->|"private object read/write"| S3["Amazon S3<br/>사용자 업로드 파일"]
-        APP -->|"동기 invoke"| LAMBDA["AWS Lambda<br/>비밀번호 재설정 메일"]
-        LAMBDA --> SES["Amazon SES v2"]
-    end
-
-    APP -->|"문제 생성 · 분석"| OPENAI["OpenAI API"]
-    APP -->|"OAuth 2.0"| OAUTH["Google · GitHub"]
-```
-
-- Route 53 alias가 ALB로 요청을 전달하고, ACM 인증서가 연결된 ALB가 HTTPS를 종료.
-- ALB는 `/health` 상태 검사를 통과한 EC2의 Dockerized Spring Boot 앱으로만 요청을 전달. 앱과 MySQL은 같은 Docker network에서 통신.
-- 업로드 파일은 private S3에 저장하고 S3 URL을 브라우저에 노출하지 않음. 앱의 same-origin endpoint가 권한 확인 후 streaming.
-- 비밀번호 재설정은 EC2 앱이 Lambda를 동기 호출하고, Lambda가 SES v2로 메일을 전송.
-
-```mermaid
-flowchart LR
-    DEV["개발자<br/>main merge"] --> GA["GitHub Actions<br/>production environment"]
-    GA --> BUILD["Gradle test · bootJar<br/>Lambda test · build"]
-    BUILD --> OIDC["GitHub OIDC<br/>IAM Role assume"]
-    OIDC --> SAM["AWS SAM<br/>Lambda · private S3 배포"]
-    OIDC --> ECR["Amazon ECR<br/>linux/amd64 image push"]
-    ECR --> SSM["AWS Systems Manager<br/>remote command"]
-    SSM --> EC2["EC2<br/>image pull · container replace"]
-    EC2 --> HEALTH["/health check<br/>최대 30회 재시도"]
-```
-
-`main` push가 production Environment의 workflow를 시작. test·`bootJar` 통과 후 GitHub OIDC로 IAM Role을 assume해 long-lived access key를 저장하지 않음. SAM이 Lambda·private S3를 배포하고, Git SHA 태그 image를 ECR에 push한 뒤 SSM이 EC2 컨테이너를 교체. `/health`가 최대 30회 안에 성공해야 완료.
-
-운영은 `MAIL_TRANSPORT=lambda`, `KNOWVA_STORAGE_MODE=s3`. 전환·복구를 위해 코드 차원에서는 `smtp|lambda`, `local|mirror|s3` adapter도 유지.
-
-</details>
-
-<details>
-<summary><b>기술 스택 · 프로젝트 구조</b></summary>
-
-<br/>
-
-| 구분 | 사용 |
-| --- | --- |
-| Backend | Java 17, Spring Boot 4.0.6, Spring MVC, Spring Security, Validation, MyBatis |
-| View | Thymeleaf, HTML/CSS/JavaScript, CodeMirror 6, Milkdown 7, Marked, DOMPurify, esbuild |
-| Data | MySQL 8, MyBatis, H2 test runtime |
-| AI · 외부 연동 | OpenAI API, Google OAuth 2.0, GitHub OAuth, Kakao Pay, Toss Payments |
-| Infra | Docker, EC2, ALB, Route 53, ACM, ECR, Systems Manager, Lambda, SES v2, private S3, AWS SAM |
-| CI/CD | GitHub Actions, GitHub Environment, OIDC IAM Role |
-| Test | JUnit 5, Spring Boot Test, MyBatis Test, H2, Gradle |
-
-```text
-.
-├── ELearning/
-│   ├── src/main/java/com/acorn/elearning/
-│   │   ├── learning/     # 온보딩, 커리큘럼, 레슨, 레벨 테스트  ← 담당 파트
-│   │   ├── exam/         # AI 코딩 테스트, 실행, 채점
-│   │   ├── analysis/     # AI 학습 분석과 대시보드
-│   │   ├── community/    # 게시글, 댓글, 반응, 신고
-│   │   ├── practice/     # 문제 풀이와 오답노트
-│   │   ├── ranking/      # 점수·주간/월간 랭킹
-│   │   ├── content/      # 과목별 추천 콘텐츠
-│   │   ├── auth/         # 로그인, OAuth, Lambda 비밀번호 재설정
-│   │   ├── payment/      # 프리미엄 결제와 권한 부여
-│   │   ├── storage/      # local/mirror/S3 object storage adapter
-│   │   └── common/       # API 응답, 예외, AI client, idempotency
-│   ├── src/main/resources/  # Thymeleaf 화면 · static · MyBatis XML 매퍼
-│   ├── src/main/frontend/   # CodeMirror·Milkdown 번들 소스
-│   └── Dockerfile
-├── docs/sql/               # DDL, demo setup, curriculum, community seed data
-├── mail-lambda/            # Java 17 기반 SES v2 password-reset Lambda
-├── infra/aws/template.yaml # Lambda, private S3, EC2 runtime IAM 정책 SAM template
-└── .github/workflows/deploy.yml
-```
-
-</details>
