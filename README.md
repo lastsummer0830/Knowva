@@ -23,11 +23,16 @@
 
 <br/>
 
-| <img src="docs/portfolio/images/02_leveltest_result.png" width="100%" alt="레벨 스캔 완료 — 8문항 중 3문항 정답으로 실버 판정, 출발 지점 로드맵에 면제·시작·잠김 표시"> | <img src="docs/portfolio/images/03_locked_level.jpg" width="100%" alt="GOLD 레벨 로드맵 — 행성이 모두 회색으로 잠김 배지가 붙은 상태"> |
-|:--:|:--:|
-| **레벨 판정 → 해금** · 3/8 정답 = 실버, 1단계 면제 | **잠긴 레벨** · 서버가 확정한 `locked` 를 그대로 렌더 |
-| <img src="docs/portfolio/images/04_lesson_detail.png" width="100%" alt="이론 레슨 상세 — 이론 완료됨 배지, 예시 코드, 문제 풀이 하러 가기·북마크됨·다음 레슨 버튼"> | <img src="docs/portfolio/images/05_leveltest_question.png" width="100%" alt="레벨 스캔 진단 문항 1번 — Java 정수 기본형을 묻는 4지선다"> |
-| **이론 레슨** · 완료 처리 · 북마크 토글 | **진단 문항** · 사전 등록 8문항 (AI 미사용) |
+<table>
+<tr>
+<td width="50%"><img src="docs/portfolio/images/02_leveltest_result.png" alt="레벨 스캔 완료 — 8문항 중 3문항 정답으로 실버 판정, 출발 지점 로드맵에 면제·시작·잠김 표시"><br><sub><b>레벨 판정 → 해금</b> — 8문항 중 3정답이라 실버, 1단계를 면제하고 레벨 2부터 시작</sub></td>
+<td width="50%"><img src="docs/portfolio/images/03_locked_level.jpg" alt="GOLD 레벨 로드맵 — 행성이 모두 회색으로 잠김 배지가 붙은 상태"><br><sub><b>잠긴 레벨</b> — 컨트롤러가 확정한 locked 를 템플릿이 그리기만 함</sub></td>
+</tr>
+<tr>
+<td><img src="docs/portfolio/images/04_lesson_detail.png" alt="이론 레슨 상세 — 이론 완료됨 배지, 예시 코드, 문제 풀이 하러 가기·북마크됨·다음 레슨 버튼"><br><sub><b>이론 레슨</b> — 완료 처리 · 북마크 토글 · 다음 레슨</sub></td>
+<td><img src="docs/portfolio/images/05_leveltest_question.png" alt="레벨 스캔 진단 문항 1번 — Java 정수 기본형을 묻는 4지선다"><br><sub><b>진단 문항</b> — 사전 등록 8문항, AI 미사용</sub></td>
+</tr>
+</table>
 
 <br/>
 
